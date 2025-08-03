@@ -3,9 +3,9 @@ const buttontd1 = document.queryselector('.buttoninput');
 const listtd1 = document.querySelector('.todolist');
 
 
-document.addEventListener('DOMContentLoaded', loadToDoList);
+document.addEventListener('DOMContentLoaded', loadTodoList);
 
-buttond1.addEventListener('click', clickButton);
+buttontd1.addEventListener('click', clickButton);
 listtd1.addEventListener('click', okdel);
 
 function clickButton(e) {
@@ -21,8 +21,8 @@ function addTodo(){
         id: Date.now()
     };
 
-    createTodoElements(todo);
-    saveTodoList(todo);
+    createTodoElement(todo);
+    saveTodoLists(todo);
 
     inputtd1.value = '';
 }
@@ -43,7 +43,7 @@ function createTodoElement(todo){
     itemall.appendChild(checkbutton);
 
     const trashbutton = document.createElement("button");
-    trashnutton.innerHTML = '<i class="fa-solid fa-check"></i>';
+    trashbutton.innerHTML = '<i class="fa-solid fa-check"></i>';
     trashbutton.classList.add("trash-button");
     itemall.appendChild(trashbutton);
 
