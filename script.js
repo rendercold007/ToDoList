@@ -1,5 +1,5 @@
 const inputtd1 = document.querySelector('.textarea');
-const buttontd1 = document.queryselector('.buttoninput');
+const buttontd1 = document.querySelector('.buttoninput');
 const listtd1 = document.querySelector('.todolist');
 
 
@@ -28,17 +28,17 @@ function addTodo(){
 }
 
 function createTodoElement(todo){
-    const itemall = document.creatwElement('div');
+    const itemall = document.createElement('div');
     itemall.classList.add('itemall');
     itemall.setAttribute('data-id', todo.id);
 
     const item = document.createElement('p');
-    item.classList.ad('item');
+    item.classList.add('item');
     item.innerText = todo.text;
     itemall.appendChild(item);
 
     const checkbutton = document.createElement("button");
-    checkbutton.innerHTMl = '<i class="fa-solid fa-check"></i>';
+    checkbutton.innerHTML = '<i class="fa-solid fa-check"></i>';
     checkbutton.classList.add("check-button");
     itemall.appendChild(checkbutton);
 
@@ -53,7 +53,7 @@ function createTodoElement(todo){
 function saveTodoLists(todo){
     const todos = getTodosFromStorage();
     todos.push(todo);
-    localStorage.aetItem('todos', JSON.stringify(todos));
+    localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 function loadTodoList(){
